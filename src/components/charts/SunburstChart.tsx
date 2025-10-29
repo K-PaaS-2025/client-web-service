@@ -70,7 +70,7 @@ export default function SunburstChart({ data, width = 500, height = 500 }: Sunbu
       .style('cursor', 'pointer')
 
     // Add text labels - only for segments that are large enough
-    const text = g.selectAll('text')
+    g.selectAll('text')
       .data(root.descendants().filter(d => {
         return d.depth > 0 && ((d as any).x1 - (d as any).x0) > 0.03
       }))
@@ -87,13 +87,13 @@ export default function SunburstChart({ data, width = 500, height = 500 }: Sunbu
       .style('fill', '#333')
       .style('pointer-events', 'none')
       .text(d => {
-        const angle = d.x1 - d.x0
+        const angle = (d as any).x1 - (d as any).x0
         if (angle < 0.05) return ''
         return d.data.name.length > 8 ? d.data.name.slice(0, 8) + '...' : d.data.name
       })
 
     // Add interactions
-    slice.on('mouseover', function(event, d) {
+    slice.on('mouseover', function(_, d) {
       // Highlight the sequence
       const sequenceArray = d.ancestors().reverse().slice(1) // Remove root
       const sequenceNames = sequenceArray.map(node => node.data.name)
@@ -122,7 +122,7 @@ export default function SunburstChart({ data, width = 500, height = 500 }: Sunbu
 
     // Add center circle
     g.append('circle')
-      .attr('r', root.y0)
+      .attr('r', (root as any).y0)
       .style('fill', '#fff')
       .style('stroke', '#999')
       .style('stroke-width', 1)
