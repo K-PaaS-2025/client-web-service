@@ -62,7 +62,7 @@ export default function SunburstChart({ data, width = 500, height = 500 }: Sunbu
     const slice = g.selectAll('path')
       .data(root.descendants().filter(d => d.depth > 0))
       .enter().append('path')
-      .attr('d', arc)
+      .attr('d', arc as any)
       .style('fill', color)
       .style('stroke', '#fff')
       .style('stroke-width', 1)
