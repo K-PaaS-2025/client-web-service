@@ -72,16 +72,16 @@ export default function SunburstChart({ data, width = 500, height = 500 }: Sunbu
     // Add text labels - only for segments that are large enough
     const text = g.selectAll('text')
       .data(root.descendants().filter(d => {
-        return d.depth > 0 && (d.x1 - d.x0) > 0.03
+        return d.depth > 0 && ((d as any).x1 - (d as any).x0) > 0.03
       }))
       .enter().append('text')
       .attr('transform', d => {
-        const angle = (d.x0 + d.x1) / 2
-        const radius = (d.y0 + d.y1) / 2
+        const angle = ((d as any).x0 + (d as any).x1) / 2
+        const radius = ((d as any).y0 + (d as any).y1) / 2
         return `rotate(${angle * 180 / Math.PI - 90}) translate(${radius},0) rotate(${angle > Math.PI ? 180 : 0})`
       })
       .attr('dy', '0.35em')
-      .attr('text-anchor', d => (d.x0 + d.x1) / 2 > Math.PI ? 'end' : 'start')
+      .attr('text-anchor', d => ((d as any).x0 + (d as any).x1) / 2 > Math.PI ? 'end' : 'start')
       .style('font-size', '11px')
       .style('font-family', 'Arial, sans-serif')
       .style('fill', '#333')
