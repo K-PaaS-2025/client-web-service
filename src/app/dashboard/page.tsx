@@ -736,7 +736,7 @@ const userBehaviorAnalytics = {
     "데스크톱": 867,
     "태블릿": 194
   },
-  timeOfDay: {
+  timeOfDayDetailed: {
     "오전(6-12시)": 456,
     "오후(12-18시)": 789,
     "저녁(18-24시)": 623,
