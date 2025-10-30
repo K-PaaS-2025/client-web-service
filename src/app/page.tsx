@@ -22,10 +22,10 @@ export default function SplashPage() {
           <Heart className="h-12 w-12 text-amber-50 dark:text-amber-900" />
         </div>
         <h1 className="text-3xl font-bold text-amber-900 dark:text-amber-100">
-          반려동물 케어 매칭
+          토닥 to-Dog
         </h1>
         <p className="text-amber-700 dark:text-amber-300 mt-2">
-          시니어와 반려동물을 연결하는 따뜻한 플랫폼
+          고립자와 동물을 이어주는 따뜻한 플랫폼
         </p>
       </div>
     </div>

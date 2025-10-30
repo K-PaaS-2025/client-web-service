@@ -30,10 +30,10 @@ export default function LoginPage() {
             <Heart className="h-6 w-6 text-amber-50 dark:text-amber-900" />
           </div>
           <CardTitle className="text-2xl font-bold text-amber-900 dark:text-amber-100">
-            반려동물 케어 매칭
+            토닥: to-Dog
           </CardTitle>
           <CardDescription>
-            시니어와 반려동물을 연결하는 따뜻한 플랫폼
+            사람과 동물이 함께 토닥이는 세상
           </CardDescription>
         </CardHeader>
         <CardContent>
